@@ -12,7 +12,7 @@
     </a>
 </p>
 
-# DCRefresher Reborn
+# DCSelfImage
 
 디시인사이드 자짤 확장 프로그램
 
