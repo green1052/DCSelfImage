@@ -130,7 +130,7 @@ function isRandomEnabledForCurrentGroup() {
 function startAddGallery() {
     isShowGalleryForm.value = true;
     newGalleryId.value = "";
-    selectedGroups.value = [0];
+    selectedGroups.value = [];
     currentGallery.value = null;
 }
 
@@ -325,7 +325,7 @@ function removeImage(index: number) {
                                 v-model="settings.webpConversion"
                                 disabled
                                 type="checkbox"
-                            />
+                            >
                             <label for="webp-toggle" />
                         </div>
                     </label>
@@ -338,7 +338,7 @@ function removeImage(index: number) {
                                 id="name-obfuscation-toggle"
                                 v-model="settings.nameObfuscation"
                                 type="checkbox"
-                            />
+                            >
                             <label for="name-obfuscation-toggle" />
                         </div>
                     </label>
@@ -402,7 +402,7 @@ function removeImage(index: number) {
                             style="display: none"
                             type="file"
                             @change="imageUpload($event.target.files)"
-                        />
+                        >
                         <span
                             v-if="isUploading"
                             class="loading-spinner"
@@ -418,7 +418,7 @@ function removeImage(index: number) {
                                     :checked="isRandomEnabledForCurrentGroup()"
                                     type="checkbox"
                                     @change="toggleRandomForCurrentGroup"
-                                />
+                                >
                                 <label :for="`random-toggle-${currentGroup}`" />
                             </div>
                         </label>
@@ -436,7 +436,7 @@ function removeImage(index: number) {
                             v-model="selectAllChecked"
                             type="checkbox"
                             @change="toggleSelectAll"
-                        />
+                        >
                         <span>전체 선택</span>
                     </label>
                 </div>
@@ -476,13 +476,13 @@ function removeImage(index: number) {
                                     :checked="selectedImages.includes(index)"
                                     type="checkbox"
                                     @change="toggleImageSelection(index)"
-                                />
+                                >
                             </div>
                             <img
                                 :alt="image.filename"
                                 :src="image.imageurl"
                                 class="image-preview"
-                            />
+                            >
                             <div class="image-actions">
                                 <button
                                     class="btn-icon"
@@ -501,7 +501,6 @@ function removeImage(index: number) {
             </div>
         </section>
 
-        <!-- 새로운 갤러리 섹션 -->
         <section class="gallery-section">
             <div class="section-header">
                 <h2>갤러리 설정</h2>
@@ -515,7 +514,6 @@ function removeImage(index: number) {
                 </div>
             </div>
 
-            <!-- 갤러리 추가/수정 폼 -->
             <div
                 v-if="isShowGalleryForm"
                 class="gallery-form"
@@ -524,15 +522,14 @@ function removeImage(index: number) {
                     <label
                         class="form-label"
                         for="gallery-id"
-                        >갤러리 ID</label
-                    >
+                    >갤러리 ID</label>
                     <input
                         id="gallery-id"
                         v-model="newGalleryId"
                         class="form-input"
                         placeholder="예: programming"
                         type="text"
-                    />
+                    >
                 </div>
                 <div class="form-group group-selection">
                     <label class="form-label">사용할 그룹 선택</label>
@@ -542,13 +539,12 @@ function removeImage(index: number) {
                             :key="group.value"
                             class="checkbox-item"
                         >
-                            <label :class="{ disabled: group.value === 0 }">
+                            <label>
                                 <input
                                     :checked="selectedGroups.includes(group.value)"
-                                    :disabled="group.value === 0"
                                     type="checkbox"
                                     @change="toggleGroupSelection(group.value)"
-                                />
+                                >
                                 <span class="checkbox-label">{{ group.text }}</span>
                             </label>
                         </div>
@@ -570,7 +566,6 @@ function removeImage(index: number) {
                 </div>
             </div>
 
-            <!-- 갤러리 목록 -->
             <div class="gallery-list">
                 <div
                     v-if="galleryList.length === 0"
@@ -651,7 +646,6 @@ $border-radius-lg: 10px;
 
 $transition-speed: 0.2s;
 
-// 믹스인 정의
 @mixin transition($property...) {
     transition: $property $transition-speed ease;
 }
@@ -673,7 +667,6 @@ $transition-speed: 0.2s;
     }
 }
 
-// 섹션과 카드 스타일링 믹스인
 @mixin card($padding: 20px, $radius: $border-radius) {
     background-color: $bg-secondary;
     border-radius: $radius;
@@ -682,7 +675,6 @@ $transition-speed: 0.2s;
     border: 1px solid $border-color;
 }
 
-// 전역 스타일
 :root {
     color-scheme: dark;
 }
@@ -703,7 +695,6 @@ body {
         sans-serif;
 }
 
-// 스크롤바 스타일
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -722,7 +713,6 @@ body {
     }
 }
 
-// 컴포넌트 스타일
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -755,7 +745,6 @@ h2 {
     font-weight: 600;
 }
 
-// 섹션 스타일
 .settings-section,
 .group-section,
 .gallery-section {
@@ -768,7 +757,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-// 카드 스타일
 .settings-card {
     background-color: $bg-tertiary;
     border-radius: $border-radius;
@@ -803,7 +791,6 @@ h2 {
     }
 }
 
-// 토글 스위치
 .toggle-switch {
     position: relative;
     display: inline-block;
@@ -849,7 +836,6 @@ h2 {
     }
 }
 
-// 버튼 스타일
 .btn-group {
     @include flex(row, flex-start, center, 10px);
 }
@@ -917,7 +903,6 @@ h2 {
     }
 }
 
-// 셀렉트 박스 스타일
 .group-selector {
     @include flex(row, flex-start, center, 15px);
     margin-bottom: 20px;
@@ -972,7 +957,6 @@ h2 {
     }
 }
 
-// 이미지 컨트롤 영역
 .image-controls {
     @include flex(row, space-between, center);
     margin-bottom: 15px;
@@ -997,7 +981,6 @@ h2 {
     }
 }
 
-// 파일 업로드 버튼
 .upload-container {
     @include flex(row, flex-start, center);
 
@@ -1036,7 +1019,6 @@ h2 {
     }
 }
 
-// 이미지 갤러리
 .image-gallery {
     margin-top: 20px;
 
@@ -1091,7 +1073,7 @@ h2 {
 
         .image-container {
             position: relative;
-            padding-top: 100%; // 1:1 비율
+            padding-top: 100%;
             overflow: hidden;
             background-color: #000;
 
@@ -1160,7 +1142,6 @@ h2 {
     }
 }
 
-// 갤러리 폼 스타일
 .gallery-form {
     background-color: $bg-tertiary;
     border-radius: $border-radius;
@@ -1247,7 +1228,6 @@ h2 {
     }
 }
 
-// 갤러리 목록 스타일
 .gallery-list {
     margin-top: 20px;
 
@@ -1318,7 +1298,6 @@ h2 {
     }
 }
 
-// 반응형 스타일
 @media (max-width: 768px) {
     .section-header {
         flex-direction: column;

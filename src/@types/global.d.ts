@@ -18,11 +18,11 @@ declare global {
     interface Group {
         text: string;
         value: number;
-        randomEnabled?: boolean; // 그룹별 랜덤 설정 추가
+        randomEnabled?: boolean;
     }
 
     interface Gallery {
-        id: string; // 갤러리 ID만 사용
+        id: string;
         groups: number[];
     }
 
