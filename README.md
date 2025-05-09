@@ -3,8 +3,8 @@
     <a href="https://chrome.google.com/webstore/detail/dcrefresher-reborn/ieimgpohehnbbebphhancbnkkheoikmf" target="_blank">
         <img src="https://img.shields.io/chrome-web-store/rating/pmfifcbendahnkeojgpfppklgioemgon?logo=chromewebstore">
     </a>
-    <a href="https://addons.mozilla.org/ko/firefox/addon/dcrefresher-reborn" target="_blank">
-        <img src="https://img.shields.io/amo/rating/dcrefresher-reborn?logo=firefox">
+    <a href="https://addons.mozilla.org/ko/firefox/addon/dcselfimage" target="_blank">
+        <img src="https://img.shields.io/amo/rating/dcselfimage?logo=firefox">
     </a>
     <br>
     <a href="https://www.buymeacoffee.com/green1052" target="_blank">
