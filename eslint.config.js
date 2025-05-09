@@ -20,7 +20,7 @@ export default tseslint.config(
             "@typescript-eslint/ban-ts-comment": "off"
         }
     },
-    ...pluginVue.configs["flat/vue2-recommended"],
+    ...pluginVue.configs["flat/recommended"],
     {
         files: ["*.vue", "**/*.vue"],
         languageOptions: {
