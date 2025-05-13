@@ -209,7 +209,7 @@ async function imageUpload(files: FileList) {
         isUploading.value = true;
 
         const dom = new DOMParser().parseFromString(
-            await ky.get("https://gall.dcinside.com/board/write/?id=nmh").text(),
+            await ky.get("https://gall.dcinside.com/board/write/?id=nmh", { timeout: 30000 }).text(),
             "text/html"
         );
 
@@ -231,6 +231,7 @@ async function imageUpload(files: FileList) {
 
                 const response = await ky
                     .post("https://upimg.dcinside.com/upimg_file.php", {
+                        timeout: 30000,
                         searchParams: {
                             id: "nmh",
                             r_key: rKey
@@ -325,7 +326,7 @@ function removeImage(index: number) {
                                 v-model="settings.webpConversion"
                                 disabled
                                 type="checkbox"
-                            >
+                            />
                             <label for="webp-toggle" />
                         </div>
                     </label>
@@ -338,7 +339,7 @@ function removeImage(index: number) {
                                 id="name-obfuscation-toggle"
                                 v-model="settings.nameObfuscation"
                                 type="checkbox"
-                            >
+                            />
                             <label for="name-obfuscation-toggle" />
                         </div>
                     </label>
@@ -402,7 +403,7 @@ function removeImage(index: number) {
                             style="display: none"
                             type="file"
                             @change="imageUpload($event.target.files)"
-                        >
+                        />
                         <span
                             v-if="isUploading"
                             class="loading-spinner"
@@ -418,7 +419,7 @@ function removeImage(index: number) {
                                     :checked="isRandomEnabledForCurrentGroup()"
                                     type="checkbox"
                                     @change="toggleRandomForCurrentGroup"
-                                >
+                                />
                                 <label :for="`random-toggle-${currentGroup}`" />
                             </div>
                         </label>
@@ -436,7 +437,7 @@ function removeImage(index: number) {
                             v-model="selectAllChecked"
                             type="checkbox"
                             @change="toggleSelectAll"
-                        >
+                        />
                         <span>전체 선택</span>
                     </label>
                 </div>
@@ -476,13 +477,13 @@ function removeImage(index: number) {
                                     :checked="selectedImages.includes(index)"
                                     type="checkbox"
                                     @change="toggleImageSelection(index)"
-                                >
+                                />
                             </div>
                             <img
                                 :alt="image.filename"
                                 :src="image.imageurl"
                                 class="image-preview"
-                            >
+                            />
                             <div class="image-actions">
                                 <button
                                     class="btn-icon"
@@ -522,14 +523,15 @@ function removeImage(index: number) {
                     <label
                         class="form-label"
                         for="gallery-id"
-                    >갤러리 ID</label>
+                        >갤러리 ID</label
+                    >
                     <input
                         id="gallery-id"
                         v-model="newGalleryId"
                         class="form-input"
                         placeholder="예: programming"
                         type="text"
-                    >
+                    />
                 </div>
                 <div class="form-group group-selection">
                     <label class="form-label">사용할 그룹 선택</label>
@@ -544,7 +546,7 @@ function removeImage(index: number) {
                                     :checked="selectedGroups.includes(group.value)"
                                     type="checkbox"
                                     @change="toggleGroupSelection(group.value)"
-                                >
+                                />
                                 <span class="checkbox-label">{{ group.text }}</span>
                             </label>
                         </div>
