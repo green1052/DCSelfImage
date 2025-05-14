@@ -1,4 +1,7 @@
 <p align="center">
+    <img src="./assets/icon.png" width="200px"/>
+    <br>
+    <br>
     <img src="https://img.shields.io/github/v/release/green1052/DCSelfImage">
     <a href="https://chrome.google.com/webstore/detail/dc-self-image/ieimgpohehnbbebphhancbnkkheoikmf" target="_blank">
         <img src="https://img.shields.io/chrome-web-store/rating/ieimgpohehnbbebphhancbnkkheoikmf?logo=chromewebstore">
