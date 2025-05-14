@@ -5,9 +5,13 @@ window.addEventListener("message", (ev) => {
 
     const images: Image[] = ev.data.images;
 
+    if (!images.length) return;
+
     for (const image of images) {
         window.attach(image);
     }
+
+    document.querySelector<HTMLInputElement>("#upload_status").value = "Y";
 });
 
 export const config: PlasmoCSConfig = {

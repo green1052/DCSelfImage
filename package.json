@@ -1,7 +1,7 @@
 {
     "name": "dc-self-image",
     "displayName": "DCSelfImage",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "디시인사이드 자짤 확장 프로그램",
     "author": "green1052",
     "scripts": {
