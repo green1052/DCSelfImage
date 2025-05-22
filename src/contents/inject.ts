@@ -1,11 +1,24 @@
 import type { PlasmoCSConfig } from "plasmo";
 
-window.addEventListener("message", (ev) => {
+function waitAttach() {
+    return new Promise((resolve) => {
+        const interval = setInterval(() => {
+            if (window.attach) {
+                clearInterval(interval);
+                resolve(true);
+            }
+        }, 100);
+    });
+}
+
+window.addEventListener("message", async (ev) => {
     if (ev.source !== window || ev.data.type !== "UPLOAD") return;
 
     const images: Image[] = ev.data.images;
 
     if (!images.length) return;
+
+    await waitAttach();
 
     for (const image of images) {
         window.attach(image);
