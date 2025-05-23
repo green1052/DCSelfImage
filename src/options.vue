@@ -531,7 +531,7 @@ function removeImage(index: number) {
                         id="gallery-id"
                         v-model="newGalleryId"
                         class="form-input"
-                        placeholder="예: programming"
+                        placeholder="bser"
                         type="text"
                     />
                 </div>
