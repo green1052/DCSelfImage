@@ -1,6 +1,10 @@
 export {};
 
 declare global {
+    interface Window {
+        attach: (data: Image) => void;
+    }
+
     interface DcinsideImage {
         files: {
             name: string;

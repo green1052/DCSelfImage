@@ -6,9 +6,9 @@ const pickRandom = (array: any[]) => array[Math.floor(Math.random() * array.leng
 
 (async () => {
     const [images, groups, galleries] = await Promise.all([
-        sendToBackground({ name: "images" }),
-        sendToBackground({ name: "groups" }),
-        sendToBackground({ name: "galleries" })
+        sendToBackground({ name: "images" }) as Promise<Record<number, Image[]>>,
+        sendToBackground({ name: "groups" }) as Promise<Group[]>,
+        sendToBackground({ name: "galleries" }) as Promise<Gallery[]>
     ]);
 
     const galleryGroups = galleries.find((v) => v.id === id)?.groups;

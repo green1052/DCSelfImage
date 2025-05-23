@@ -2,12 +2,11 @@ import type { PlasmoCSConfig } from "plasmo";
 
 function waitAttach() {
     return new Promise((resolve) => {
-        const interval = setInterval(() => {
-            if (window.attach) {
-                clearInterval(interval);
-                resolve(true);
-            }
-        }, 100);
+        const interval = window.setInterval(() => {
+            if (typeof window.attach !== "function") return;
+            clearInterval(interval);
+            resolve(true);
+        }, 500);
     });
 }
 
