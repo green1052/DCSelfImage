@@ -691,7 +691,7 @@ body {
     padding: 0;
     min-height: 100vh;
     font-family:
-        "Pretendard Variable",
+        "Noto Sans KR",
         -apple-system,
         BlinkMacSystemFont,
         system-ui,
