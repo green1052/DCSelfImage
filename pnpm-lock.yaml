@@ -55,8 +55,8 @@ importers:
         specifier: ^3.0.5
         version: 3.0.5
       ky:
-        specifier: ^1.9.1
-        version: 1.9.1
+        specifier: ^1.10.0
+        version: 1.10.0
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -2553,8 +2553,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  ky@1.9.1:
-    resolution: {integrity: sha512-WGzpBn57klhxsqRTEABAqF4tqTtqCuxoTIv9m6nIZtMMFTVcrHp7bRDWblzFIfqkb47+OhTztOgHn6A4xItmqg==}
+  ky@1.10.0:
+    resolution: {integrity: sha512-YRPCzHEWZffbfvmRrfwa+5nwBHwZuYiTrfDX0wuhGBPV0pA/zCqcOq93MDssON/baIkpYbvehIX5aLpMxrRhaA==}
     engines: {node: '>=18'}
 
   less@4.3.0:
@@ -6289,7 +6289,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  ky@1.9.1: {}
+  ky@1.10.0: {}
 
   less@4.3.0:
     dependencies:
@@ -6621,7 +6621,7 @@ snapshots:
 
   package-json@10.0.1:
     dependencies:
-      ky: 1.9.1
+      ky: 1.10.0
       registry-auth-token: 5.1.0
       registry-url: 6.0.1
       semver: 7.7.1
