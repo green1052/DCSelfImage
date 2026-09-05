@@ -19,7 +19,7 @@
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@types/node": "^24.13.3",
-        "@types/webextension-polyfill": "^0.12.5",
+        "@types/webextension-polyfill": "^0.12.6",
         "eslint": "^10.9.1",
         "eslint-config-prettier": "^10.1.7",
         "eslint-plugin-prettier": "^5.5.6",
